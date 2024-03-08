@@ -110,10 +110,10 @@ import './index.css';
 //   </>
 // );
 
-// import App13 from "./App13";
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <>
-//     <App13 />
-//   </>
-// );
+import App13 from "./App13";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <>
+    <App13 />
+  </>
+);

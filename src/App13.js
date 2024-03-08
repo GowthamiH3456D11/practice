@@ -1,23 +1,60 @@
-import React from "react";
-import './App.css';
-// import Login from "./Login";
-// import Home from "./Home";
+import React, { useState } from 'react';
 
-export default function App13() {
-  return  (
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [messageColor, setMessageColor] = useState('');
+
+  const users = [
+    { username: 'Gowthami', password: '123' },
+    { username: 'Gowthami1', password: '123' },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const foundUser = users.find((user) => user.username === username && user.password === password);
+
+    if (foundUser) {
+      setMessage('Access Granted.');
+      setMessageColor('green');
+    } else {
+      setMessage('Access Denied.');
+      setMessageColor('red');
+    }
+
+    // Reset form fields
+    setUsername('');
+    setPassword('');
+  };
+
+  return (
     <div>
-      <h2>Login Form</h2>
-      <p>
-        <input type="text" placeholder="Enter Username"></input>
-      </p>
-      <p>
-        <input type="password" placeholder="Enter Password"></input>
-      </p>
-      <button>Login</button>
-      <br />
-      <label class="label1">displayText</label> <br />
-      <label class="label2">displayText2</label>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      <p style={{ color: messageColor }}>{message}</p>
     </div>
-  ) 
-}
- 
+  );
+};
+
+export default LoginForm;
