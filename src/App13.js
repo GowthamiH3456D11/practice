@@ -7,8 +7,8 @@ const LoginForm = () => {
   const [messageColor, setMessageColor] = useState('');
 
   const users = [
-    { username: 'Gowthami', password: '123' },
-    { username: 'Gowthami1', password: '123' },
+    { username: 'john', password: 'pass1234' },
+  
   ];
 
   const handleSubmit = (e) => {
@@ -24,7 +24,7 @@ const LoginForm = () => {
       setMessageColor('red');
     }
 
-    // Reset form fields
+    
     setUsername('');
     setPassword('');
   };
