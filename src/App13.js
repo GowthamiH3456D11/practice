@@ -24,7 +24,11 @@ const LoginForm = () => {
       setMessageColor('red');
     }
 
+<<<<<<< HEAD
     
+=======
+  
+>>>>>>> 2fcd6fd9feac3aaac753b702a8b0e291f6c5afb4
     setUsername('');
     setPassword('');
   };
